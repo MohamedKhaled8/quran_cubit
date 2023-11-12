@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BookmarkScreen extends StatelessWidget {
+  
   const BookmarkScreen({super.key});
 
   @override

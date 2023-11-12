@@ -10,7 +10,7 @@ String surahToJson(List<SurahModel> data) =>
 
 class SurahModel extends Equatable {
   final int nomor;
-  final String nama;
+  final String name;
   final String namaLatin;
   final int jumlahAyat;
   final TempatTurun tempatTurun;
@@ -21,7 +21,7 @@ class SurahModel extends Equatable {
 
   const SurahModel({
     required this.nomor,
-    required this.nama,
+    required this.name,
     required this.namaLatin,
     required this.jumlahAyat,
     required this.tempatTurun,
@@ -34,7 +34,7 @@ class SurahModel extends Equatable {
   @override
   List<Object?> get props => [
         nomor,
-        nama,
+        name,
         namaLatin,
         jumlahAyat,
         tempatTurun,
@@ -46,7 +46,7 @@ class SurahModel extends Equatable {
 
   factory SurahModel.fromJson(Map<String, dynamic> json) => SurahModel(
         nomor: json["nomor"],
-        nama: json["nama"],
+        name: json["nama"],
         namaLatin: json["nama_latin"],
         jumlahAyat: json["jumlah_ayat"],
         tempatTurun: tempatTurunValues.map[json["tempat_turun"]]!,
@@ -60,7 +60,7 @@ class SurahModel extends Equatable {
 
   Map<String, dynamic> toJson() => {
         "nomor": nomor,
-        "nama": nama,
+        "nama": name,
         "nama_latin": namaLatin,
         "jumlah_ayat": jumlahAyat,
         "tempat_turun": tempatTurunValues.reverse[tempatTurun],

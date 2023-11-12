@@ -30,7 +30,9 @@ class CustomSuraItem extends StatelessWidget {
                   ),
                 )));
       },
-      child: CustomTextAyaDisplay(surah: surah),
+      child: CustomTextAyaDisplay(
+        surah: surah,
+      ),
     );
   }
 }

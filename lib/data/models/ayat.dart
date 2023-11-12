@@ -1,13 +1,15 @@
 import 'package:equatable/equatable.dart';
 
+// ignore: must_be_immutable
 class Ayat extends Equatable {
-  const Ayat({
+  Ayat({
     required this.id,
     required this.surah,
     required this.nomor,
     required this.ar,
     required this.tr,
     required this.idn,
+    this.isBookmarked,
   });
 
   final int id;
@@ -16,9 +18,9 @@ class Ayat extends Equatable {
   final String ar;
   final String tr;
   final String idn;
-
+  bool? isBookmarked;
   @override
-  List<Object?> get props => [id, surah, nomor, ar, tr, idn];
+  List<Object?> get props => [id, surah, nomor, ar, tr, idn, isBookmarked];
 
   factory Ayat.fromJson(Map<String, dynamic> json) => Ayat(
         id: json["id"],
@@ -27,6 +29,7 @@ class Ayat extends Equatable {
         ar: json["ar"],
         tr: json["tr"],
         idn: json["idn"],
+        isBookmarked: json["isBookmarked"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -36,5 +39,6 @@ class Ayat extends Equatable {
         "ar": ar,
         "tr": tr,
         "idn": idn,
+        "isBookmarked": isBookmarked,
       };
 }

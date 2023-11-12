@@ -10,16 +10,11 @@ import 'package:flutter_advanced_drawer/flutter_advanced_drawer.dart';
 import 'package:quran/presentation/widgets/home_screen_widgets/custom_drower.dart';
 import 'package:quran/presentation/widgets/home_screen_widgets/custom_home_screen_body.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({
+class HomeScreen extends StatelessWidget {
+  HomeScreen({
     Key? key,
   }) : super(key: key);
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   final advencedDroweController = AdvancedDrawerController();
 
   @override
@@ -36,7 +31,9 @@ class _HomeScreenState extends State<HomeScreen> {
         drawer: const CustomDrower(),
         child: Scaffold(
           appBar: AppBarr.buildAppBar(
-              advencedDroweController: advencedDroweController),
+              advencedDroweController: advencedDroweController,
+              allCharacters: [],
+              context: context),
           backgroundColor: ColorsApp.background,
           body: const CustomHomeScreenBody(),
         ),

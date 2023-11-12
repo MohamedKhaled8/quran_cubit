@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quran/core/constant/colors.dart';
 import 'package:quran/presentation/view/doa_view/doa_view.dart';
-import 'package:quran/presentation/view/tips_view/tips_view.dart';
+import 'package:quran/presentation/view/azrq_view/azrq_view.dart';
 import 'package:quran/presentation/view/home_view/home_screen.dart';
 import 'package:quran/presentation/view/prayer_view/prayer_view.dart';
 import 'package:quran/presentation/view/book_mark_view/book_mark_view.dart';
@@ -19,10 +19,10 @@ class CustomBottomNavBar extends StatefulWidget {
 
 class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
   List<Widget> pages = [
-    const HomeScreen(),
+    HomeScreen(),
     const DoaScreen(),
     const PrayerScreen(),
-    const TipsScreen(),
+    AzqarSceeen(),
     const BookmarkScreen(),
   ];
   int currentIndex = 0;

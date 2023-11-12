@@ -12,12 +12,14 @@ class CustomGreeting extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Assalamualaikum',
-          style: GoogleFonts.poppins(
-              fontSize: 18.sp,
-              fontWeight: FontWeight.w500,
-              color: ColorsApp.text),
+        Center(
+          child: Text(
+            'اٌلِـسُلِـاٌمِـ عٍلِـيٌـكُمِـ وِرُحٍمِـةُ اٌلِـلِـهٌ وِبّـرُكُاٌتْهٌ',
+            style: GoogleFonts.poppins(
+                fontSize: 18.sp,
+                fontWeight: FontWeight.w500,
+                color: ColorsApp.text),
+          ),
         ),
         SizedBox(
           height: 4.h,

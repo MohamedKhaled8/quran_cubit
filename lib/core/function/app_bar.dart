@@ -31,16 +31,21 @@ class AppBarr {
               icon: SvgPicture.asset('assets/svgs/search-icon.svg')),
         ]),
       );
-  static AppBar buildAppBar(
-      {final String? title,
-      AdvancedDrawerController? advencedDroweController}) {
+  static AppBar buildAppBar({
+    final String? title,
+    String query = '',
+    bool isSearching = false,
+    AdvancedDrawerController? advencedDroweController,
+    required BuildContext context,
+    required List<SurahModel> allCharacters,
+  }) {
     return AppBar(
       backgroundColor: ColorsApp.background,
       automaticallyImplyLeading: false,
       elevation: 0,
       title: Row(children: [
         SizedBox(
-          width: 90.w,
+          width: 40.w,
         ),
         Text(
           'Quran App',
@@ -49,7 +54,11 @@ class AppBarr {
         ),
         const Spacer(),
         IconButton(
-            onPressed: (() => {}),
+            onPressed: () {
+              // CustomSearchField(
+              //   allCharacters: allCharacters,
+              // );
+            },
             icon: SvgPicture.asset('assets/svgs/search-icon.svg')),
       ]),
       leading: IconButton(
@@ -70,3 +79,53 @@ void drowerController(
     {required AdvancedDrawerController advencedDroweController}) {
   advencedDroweController.showDrawer();
 }
+
+// class CustomSearchField extends StatelessWidget {
+//   List<SurahModel> allCharacters;
+//   CustomSearchField({
+//     Key? key,
+//     required this.allCharacters,
+//   }) : super(key: key);
+//   final String query = '';
+
+//   final _searchTextController = TextEditingController();
+//   @override
+//   Widget build(BuildContext context) {
+//     return TextField(
+//       controller: _searchTextController,
+//       decoration: const InputDecoration(
+//         hintText: 'Find a character...',
+//         border: InputBorder.none,
+//         hintStyle: TextStyle(fontSize: 18),
+//       ),
+//       style: const TextStyle(fontSize: 18),
+//       onChanged: (searchedCharacter) {
+//         BlocProvider.of<SurahCubit>(context)
+//             .searchCharacters(query, allCharacters);
+//       },
+//     );
+//   }
+// }
+// List<Widget> _buildAppBarActions() {
+//     if (_isSearching) {
+//       return [
+//         IconButton(
+//           onPressed: () {
+//             _clearSearch();
+//             Navigator.pop(context);
+//           },
+//           icon: const Icon(Icons.clear, color: MyColors.myGrey),
+//         ),
+//       ];
+//     } else {
+//       return [
+//         IconButton(
+//           onPressed: _startSearch,
+//           icon: const Icon(
+//             Icons.search,
+//             color: Colors.myGrey,
+//           ),
+//         ),
+//       ];
+//     }
+//   }

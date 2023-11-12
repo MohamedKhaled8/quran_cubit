@@ -7,3 +7,5 @@ class ColorsApp {
   static Color primary = const Color(0xFFA44AFF);
   static Color gray = const Color(0xFF121931);
 }
+
+

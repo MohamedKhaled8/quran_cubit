@@ -16,8 +16,7 @@ class CustomButtonSplashView extends StatelessWidget {
       bottom: -23.h,
       right: 0.w,
       child: Center(
-        child: GestureDetector(
-          behavior: HitTestBehavior.opaque,
+        child: InkWell(
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) => const CustomBottomNavBar(),

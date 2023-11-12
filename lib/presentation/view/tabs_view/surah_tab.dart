@@ -4,7 +4,9 @@ import 'package:quran/presentation/manger/cubit/surah_cubit.dart';
 import 'package:quran/presentation/widgets/home_screen_widgets/custom_sura_items.dart';
 
 class SurahTab extends StatelessWidget {
-  const SurahTab({Key? key}) : super(key: key);
+  const SurahTab({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +17,9 @@ class SurahTab extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         } else if (state is SuraLoadedData) {
           return ListView.separated(
-            itemBuilder: (context, index) =>
-                CustomSuraItem(surah: state.surahList[index]),
+            itemBuilder: (context, index) => CustomSuraItem(
+              surah: state.surahList[index],
+            ),
             separatorBuilder: (context, index) =>
                 Divider(color: const Color(0xFF7B80AD).withOpacity(.35)),
             itemCount: state.surahList.length,

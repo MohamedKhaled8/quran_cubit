@@ -3,13 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:quran/data/models/surah.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:quran/core/constant/colors.dart';
+import 'package:quran/core/constant/font_size_app.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextAyaDisplay extends StatelessWidget {
   const CustomTextAyaDisplay({
-    super.key,
+    Key? key,
     required this.surah,
-  });
+  }) : super(key: key);
 
   final SurahModel surah;
 
@@ -34,8 +35,8 @@ class CustomTextAyaDisplay extends StatelessWidget {
               )
             ],
           ),
-          const SizedBox(
-            width: 16,
+          SizedBox(
+            width: 16.w,
           ),
           Expanded(
               child: Column(
@@ -48,8 +49,8 @@ class CustomTextAyaDisplay extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontSize: 16.sp),
               ),
-              const SizedBox(
-                height: 4,
+              SizedBox(
+                height: 4.h,
               ),
               Row(
                 children: [
@@ -58,7 +59,7 @@ class CustomTextAyaDisplay extends StatelessWidget {
                     style: GoogleFonts.poppins(
                         color: ColorsApp.text,
                         fontWeight: FontWeight.w500,
-                        fontSize: 12.sp),
+                        fontSize: 15.sp),
                   ),
                   SizedBox(
                     width: 5.w,
@@ -78,17 +79,17 @@ class CustomTextAyaDisplay extends StatelessWidget {
                     style: GoogleFonts.poppins(
                         color: ColorsApp.text,
                         fontWeight: FontWeight.w500,
-                        fontSize: 12.sp),
+                        fontSize: 15.sp),
                   ),
                 ],
               )
             ],
           )),
           Text(
-            surah.nama,
+            surah.name,
             style: GoogleFonts.amiri(
                 color: ColorsApp.primary,
-                fontSize: 20.sp,
+                fontSize: FontSizeApp.arabicFontSize,
                 fontWeight: FontWeight.bold),
           ),
         ],

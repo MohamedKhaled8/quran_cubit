@@ -29,3 +29,29 @@ final class SuraLoadedData extends SurahState {
 
   const SuraLoadedData(this.surahList);
 }
+
+class CharactersState extends SurahState {
+  final List<SurahModel> searchedCharacters;
+
+  const CharactersState({this.searchedCharacters = const []});
+
+  CharactersState copyWith({
+    List<SurahModel>? searchedCharacters,
+  }) {
+    return CharactersState(
+      searchedCharacters: searchedCharacters ?? this.searchedCharacters,
+    );
+  }
+}
+
+// class AyaLoaded extends SurahState {
+//   final List<Ayat> ayatList;
+
+//   const AyaLoaded(this.ayatList);
+// }
+
+// class AyaError extends SurahState {
+//   final String error;
+
+//   const AyaError(this.error);
+// }
